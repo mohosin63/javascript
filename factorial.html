@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Find Factorial</title>
+<script>
+	function test(){
+			var a = Number(document.forms.num.value);
+			console.log(a);
+			var result = 1;
+			for(a; a>1; a--){
+				result *= a
+				}
+				document.getElementById('show').innerHTML = result;
+		}
+
+</script>
+</head>
+
+<body>
+<h1>Factorial of Number using JavaScript</h1>
+<form name="forms">
+	<h3>Enter The valid number...!</h3>
+    <input type="number" name="num" placeholder="Enter the valid number"/>
+    <input type="button" onClick="test()" value="Submit"/><br>
+    <p>Factorial: <strong id="show"></strong></p>
+	
+</form>
+</body>
+</html>

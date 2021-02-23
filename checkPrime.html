@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Check Prime</title>
+<script>
+			var massage = "Please Enter a Number :";
+			alert (massage);
+	function test(){
+		
+			var a = Number(document.forms.num.value);
+				if(a==1){
+					return a + " isn't a prime number";
+					} else if (a==2){
+						return a + " is a prime number";
+						} else {
+							for(var i=2; i<a; i++){
+								if(a%i==0){
+									return a + " isn't a prime number";
+									} 
+								}
+							}
+							return a + " is a prime number";
+		}
+</script>
+</head>
+
+<body>
+<h1>Prime Number Checker in JavaScript</h1>
+<form name="forms">
+	<strong>Enter a number </strong>
+    <input type="number" name="num" placeholder="Enter a number"/>
+    <input type="button" onClick="alert(test())" value="Check"/>
+    <input type="reset" value="Clear"/><br>
+</form>
+</body>
+</html>
