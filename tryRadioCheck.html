@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Radio & checkBox validation</title>
+	<script>
+		function checkValidation() {
+			var out = "Your Entry: \n\n";
+			var sex = document.form.gender;
+
+			for(var i =0; i<a.length; i++){
+				if(a.elements[i].checked){
+					out += "\n" + a.elements[i].value;
+				}
+			}
+			var win = window.open("","MyWin","height=200, width=200");
+			win.document.write(out);
+		}
+	</script>
+</head>
+<body>
+	<form name="form">
+		<strong>Gender:</strong>
+		<input type="radio" name="gender" value="male"><strong>Male</strong>
+		<input type="radio" name="gender" value="female"><strong>Female</strong>
+		<input type="radio" name="gender" value="other"><strong>Other</strong>
+		<br>
+		<strong>Programing Language:</strong>
+		<input type="checkbox" name="language" value="PHP" checked="true"><strong>PHP</strong>
+		<input type="checkbox" name="language" value="JavaScript"><strong>JavaScript</strong>
+		<input type="checkbox" name="language" value="Python"><strong>Python</strong>
+		<input type="checkbox" name="language" value="c"><strong>C</strong>
+		<input type="checkbox" name="language" value="Java"><strong>Java</strong>
+		<input type="checkbox" name="language" value="Android"><strong>Android</strong>
+		<br>
+		<input type="button" name="button" value="Register" onclick="checkValidation()">
+	</form>
+</body>
+</html>

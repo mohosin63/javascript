@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>email valid</title>
+</head>
+<body>
+	<script>
+		function sortItOut(form) {
+				var display="Key Feature and Components \n\n";
+				var reviewer =new Object( );
+			 	reviewer=document.form;
+			 	for (var i=0; i < reviewer.length; i++) {
+			 		if(reviewer.elements[i].checked) {
+			 		display += reviewer.elements[i].value + "\n";
+			 		}	
+			 	}
+			var a =reviewer.showTime.value=display;
+			var myWindow= window.open("","windowNew", "height=500, width=400");
+			myWindow.document.write(a);
+		}
+
+
+			
+
+	</script>
+	<form name="form">
+		<!---
+		Email:
+		<input type="text" name="email" placeholder="Enter your email"><br>
+		
+		District:
+		<select name="dzistrict">
+			<option value="" label="(Select One)"></option>
+			<option value="dhaka" label="dhaka"></option>
+			<option value="Chittagong" label="Chittagong"></option>
+			<option value="Rajshahi" label="Rajshahi"></option>
+		</select><br>
+		--->
+		Gender:
+		<input type="radio" name="gender" value="male"> Male:
+		<input type="radio" name="gender" value="female" checked="true"> Female:<br>
+		<input type="radio" name="gender" value="other"> Female:<br>
+		Education:
+		<input type="checkbox" name="education" value="ssc"><strong>SSC</strong>
+		<input type="checkbox" name="education" value="hsc"><strong>HSC</strong><br>
+		<input type="checkbox" name="education" value="bsc"><strong>BSC</strong><br>
+		<input type="checkbox" name="education" value="msc" checked="true"><strong>MSC</strong><br>
+		<input type="button" name="button" value="Submit" onclick="sortItOut(this.form)">
+	<textarea name="showTime"></textarea>
+
+	</form>
+</body>
+</html>
