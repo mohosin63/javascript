@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>email valid</title>
+</head>
+<body>
+	<script>
+		function emailValid(){
+			var emailValue = document.form.email.value;
+			console.log(emailValue);
+			var emailFormat = /^[A-z0-9\.+%-_]+@[A-z\._-]+\.[A-z]{2,3}$/;
+
+			if(!emailValue.match(emailFormat) || emailValue==""|| emailValue ==null){
+				alert("Please Enter a valid Email address");
+				return false;
+			} else{
+				document.write("Your Submissin  is Successfully");
+				return true;
+			}
+		}
+	</script>
+	<form name="form" onSubmit="return emailValid()">
+		<input type="text" name="email" placeholder="Enter your email">
+		<input type="submit" name="button" value="Submit" >
+	</form>
+</body>
+</html>
