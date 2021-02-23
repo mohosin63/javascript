@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>Reg Form</title>
+		<style>
+			#warning{
+				color: red;
+				font-weight: bold;
+				font-family: "Times new rooms"
+			}
+		</style>
+		<script>
+
+			function validation_form() {
+				var nameformat = /[a-zA-Z]$/;
+				var phoneformat = /[0-9]$/;
+				var mailformat = /[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,4}$/i;
+				var newEntry = "";
+				var massage = "";
+				
+				var myfrom = document.form.length;
+				for(var i = 0; i <myfrom; i++){
+					var uEntry = document.forms[0].elements[i].value;
+						newEntry += uEntry + "\n";
+					if(i==0){
+						if(uEntry.trim() == "" || uEntry.trim() == null || uEntry.search(nameformat) == -1){
+							massage += "First Name Can not be Empty...";
+						} 
+					}
+				if(i==1){
+						if(uEntry.trim() == "" || uEntry.trim() == null ){
+							massage += "Last Name Can not be Empty...";
+						} 
+					}
+				if(i==2){
+						if(uEntry.trim() == "" || uEntry.trim() == null || uEntry.search(mailformat) == -1 ){
+							massage += "Email Can not be Empty...";
+						} 
+					}
+				if(i==3){
+						if(uEntry.trim() == "" || uEntry.trim() == null || uEntry.length < 6 || uEntry.length > 11){
+							massage += "Password Can not be Empty (11 > PASS > 5)...";
+						} 
+					}
+				if(i==4){
+						if(uEntry.trim() != document.forms[0].elements[3].value){
+							massage += "Password Didn't Matched Re-Type corectly...";
+						} 
+					} 
+				if(i==5){
+
+						if(uEntry.search(phoneformat) == -1 || uEntry.length < 10 || uEntry.length > 15){
+							massage += "Enter your valid phone no...";
+						} 
+					} 
+				}
+
+				document.getElementById('show').innerHTML = massage;
+			
+				if(massage == ""){
+					var myWindow= window.open("","windowNew", "height=500, width=400");
+					myWindow.document.write(newEntry);
+					document.getElementById('data_show').innerHTML = newEntry;
+					alert("Your Submission is compleated")
+				}
+
+
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<div>
+				<p id="show" style="color:red"></p>
+			</div>
+			<form action="" name="form">
+				<div>
+					<strong>First Name :</strong>
+					<input type="text" name="fname" placeholder="Enter Your first name...">
+				</div>
+				<div>
+					<strong>Last Name :</strong>
+					<input type="text" name="lname" placeholder="Enter Your last name...">
+				</div>
+				<div>
+					<strong>Email</strong>
+					<input type="email" name="email" placeholder="Enter Your Email...">
+				</div>
+				<div>
+					<strong>Password :</strong>
+					<input type="password" name="password" placeholder="Enter Your Password...">
+				</div>
+				<div>
+					<strong>Re-Type Password :</strong>
+					<input type="password" name="re_password" placeholder="Re-Type Your Password...">
+				</div>
+				<div>
+					<strong>Phone No :</strong>
+					<input type="number" name="phNo" placeholder="Enter Your Phone No...">
+				</div>
+			</form>
+			<input type="button" value="Register" onclick="validation_form()">
+		</div>
+		<div>
+			<form action="">
+				<h1>YOUR DETAILES</h1>
+				<textarea name="" id="data_show" cols="30" rows="10"></textarea>
+			</form>
+		</div>
+	</body>
+</html>
