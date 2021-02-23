@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age</title>
+	<script>
+		
+		function ageallow(){
+			var a = document.vform.age.value;
+			if (18 >= a) {
+				document.write("You are Not Allowed");
+			} else {
+				document.write("You are Allowed");
+
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<form name="vform">
+		<input type="number" name="age" placeholder="type age">
+		<input type="button" onclick="ageallow()" value="Check">
+	</form>
+
+
+	
+</body>
+</html>
